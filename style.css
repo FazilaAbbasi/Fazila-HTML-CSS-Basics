@@ -1,0 +1,131 @@
+* {
+    box-sizing: border-box;
+
+  }
+  .Portfolio{
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    
+
+  }
+  
+  /* Style the search field */
+  form.example input[type=text] {
+    padding: 10px;
+    font-size: 17px;
+    border: 1px solid black;
+    float: left;
+    width: 80%;
+    background: #f1f1f1;
+  }
+  
+  /* Style the submit button */
+  form.example button {
+    float: left;
+    width: 20%;
+    padding: 10px;
+    background: #2196F3;
+    color: white;
+    font-size: 17px;
+    border: 1px solid black;
+    border-left: none; /* Prevent double borders */
+    cursor: pointer;
+  }
+  
+  form.example button:hover {
+    background: #0b7dda;
+  }
+
+
+  /* About section */
+.about{
+    padding: 10px;
+    font-size: 16px;
+    font-weight: 400;
+    border: 1px solid black;
+    float: left;
+    width: 80%;
+    height: 200px;
+    background: #f1f1f1;
+    margin-top: 10px;
+}
+/* Experience section */
+.experience{
+    padding: 10px;
+    font-size: 17px;
+    border: 1px solid black;
+    float: left;
+    width: 80%;
+    height: 300px;
+    background: #f1f1f1;
+    margin-top: 10px;
+
+}
+/* Footer section */
+
+.footer button{
+  float: left;
+    width: 20%;
+    padding: 10px;
+    background: #2196F3;
+    color: white;
+    font-size: 17px;
+    border: 1px solid black;
+    border-left: none;
+    cursor: pointer;
+  
+}
+
+/* sidebar section */
+.sidebar{
+    width: 310px;
+    right: 0;
+    border: 1px solid black;  
+    margin-top: 50px;
+    margin-right: 10px; 
+    background-color: #f1f1f1;
+    position: fixed;
+    overflow: auto;
+    
+
+  }
+.avatar {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    background-position: center; 
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 10px 0px 0px 40px
+    
+    
+
+
+}
+.skill{
+  margin: 10px 0px 0px 40px
+
+}  
+  
+
+.skill h1 {
+  font-size: 20px;
+  font-weight: 600;
+  text-align: center;
+  
+}
+.skill h2 {
+  font-size: 18px;
+  font-weight: 600;
+  
+  
+}
+.skill ul li{
+  font-size: 16px;
+  font-weight: 400;
+}
+
+
+  
