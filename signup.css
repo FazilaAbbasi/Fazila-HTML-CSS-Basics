@@ -1,105 +1,85 @@
 * {
-     box-sizing: border-box;
+  box-sizing: border-box;
+}
+body{
+  width: 100%;
+  height: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* style header section */
+.header {
+  position: fixed;
+  top: 0;
+  font-size: 17px;
+  border: 1px solid black;
+  text-align: end;
+  width: 100%;
+  height: 50px;
+  background: #f1f1f1;
+  padding: 10px;
+}
+.header a {
+  font-size: 20px;
+  font-weight: 600;
+}
+/* style the containter */
 
-  }
-  .signup{
-    width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-    }
-    
-    /* Style the Go Back  button */
-    .header{
-        font-size: 17px;
-        border: 1px solid black;
-        float: right;
-        text-align: end;
-        width: 100%;
-        height: 50px;
-        background: #f1f1f1;  
-        padding: 10px;
-        margin-top: 10px;
-        }
-        .header a{
-            font-size: 18px;
-            font-weight: 600;
+.container {
+  width: 30%;
+  padding: 20px;
+  margin-right: 20px;
+  margin-left: 30px;
+  position: absolute;
+  left: calc(50% - 15%);
+  top: calc(20% - 20px);
+  border: 2px solid black;
 
-        }
-      /* style the sign up form */
+}
+.container h1 {
+  font-size: 30px;
+  font-weight: 600;
+  text-align: center;
+}
+/* Full-width input fields */
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+button {
+  background: #2196f3;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
 
-      * {box-sizing: border-box}
-
-      .container{
-        width: 30%;
-        padding: 20px;
-        background-color:yellow;
-        margin-right: 20px;
-        margin-left: 30px;
-        position: absolute;
-        left: calc(50% - 15%);
-        top: calc(20% - 20px);
-        padding-right: 44px; 
-      }
-      .container h1{
-        font-size: 30px;
-        font-weight: 600;
-        text-align: center;
-
-      }
-
-      /* Full-width input fields */
-        input[type=text], input[type=password] {
-        width: 100%;
-        padding: 15px;
-        margin: 5px 0 22px 0;
-        display: inline-block;
-        border: none;
-        background: #f1f1f1;
-      }
-      
-      input[type=text]:focus, input[type=password]:focus {
-        background-color: #ddd;
-        outline: none;
-      }
-      
-       hr {
-        border: 1px solid #f1f1f1;
-        margin-bottom: 25px; 
-      }
-      
-      /* Set a style for all buttons */
-      button {
-        background: #2196F3;
-        color: white;
-        padding: 14px 20px;
-        margin: 8px 0;
-        border: none;
-        cursor: pointer;
-        width: 100%;
-        opacity: 0.9;
-      }
-      
-      button:hover {
-        opacity:1;
-        background: #0b7dda;
-      }
-      /* style footer section */
-      .footer{
-        font-size: 17px;
-        border: 1px solid black;
-        float: right;
-        text-align: end;
-        width: 100%;
-        height: 50px;
-        background: #f1f1f1;  
-        padding: 10px;
-        margin-top: 10px;
-        }
-        .footer a{
-            font-size: 18px;
-            font-weight: 600;
-
-        }
-    
-  
-  
+button:hover {
+  opacity: 1;
+  background: #0b7dda;
+}
+/* style footer section */
+.footer {
+  position: fixed;
+  font-size: 17px;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 50px;
+  background: #f1f1f1;
+  text-align: end;
+  border: 1px solid black;
+  padding: 10px;
+}
+.footer a {
+  font-size: 18px;
+  font-weight: 600;
+}
