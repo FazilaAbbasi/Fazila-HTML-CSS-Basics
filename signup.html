@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="signup.css" />
+    <title>Signup Form</title>
+    <style>
+      .error {
+        color: red;
+      }
+      .error-field {
+        border: 1px solid red;
+      }
+    </style>
+    <header>
+      <div class="header">
+        <a href="http://127.0.0.1:5500/index.html">Go Back!</a>
+      </div>
+    </header>
+  </head>
+  <body>
+    <section class="signup">
+      <form id="myForm">
+        <div class="container">
+          <h1>Signup Form</h1>
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" />
+          <span class="error" id="nameError"></span><br />
+          <label for="email">Email:</label>
+          <input type="text" id="email" name="email" />
+          <span class="error" id="emailError"></span><br />
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="password" />
+          <span class="error" id="passwordError"></span><br />
+          <div class="clearfix">
+            <button type="submit" class="signupbtn">Submit</button>
+          </div>
+        </div>
+      </form>
+      <script>
+        document.getElementById("myForm").onsubmit = function (event) {
+          let isValid = true;
+
+          // Reset error messages and field styles
+          document.getElementById("nameError").textContent = "";
+          document.getElementById("name").classList.remove("error-field");
+          document.getElementById("emailError").textContent = "";
+          document.getElementById("email").classList.remove("error-field");
+          document.getElementById("passwordError").textContent = "";
+          document.getElementById("password").classList.remove("error-field");
+
+          // Validation for Name
+          const name = document.getElementById("name").value;
+          if (name.trim() === "") {
+            document.getElementById("nameError").textContent =
+              "Name is required.";
+            document.getElementById("name").classList.add("error-field");
+            isValid = false;
+          }
+
+          // Validation for Email
+          const email = document.getElementById("email").value;
+          const emailPattern = /\S+@\S+\.\S+/;
+          if (!emailPattern.test(email)) {
+            document.getElementById("emailError").textContent =
+              "Invalid email address.";
+            document.getElementById("email").classList.add("error-field");
+            isValid = false;
+          }
+
+          // Validation for Password (length must be at least 8 characters)
+          const password = document.getElementById("password").value;
+          if (password.length < 8) {
+            document.getElementById("passwordError").textContent =
+              "Password must be at least 8 characters.";
+            document.getElementById("password").classList.add("error-field");
+            isValid = false;
+          }
+
+          if (!isValid) {
+            event.preventDefault(); // Prevent form submission
+          }
+        };
+      </script>
+    </section>
+  </body>
+  <footer>
+    <div class="footer">
+      <a href="https://www.linkedin.com/in/fazila-abbasi-a07b18264/"
+        >Link to My LinkedIn Profile!</a
+      >
+    </div>
+  </footer>
+</html>
