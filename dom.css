@@ -1,0 +1,169 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  width: 100%;
+  height: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* style header section */
+.header {
+  position: fixed;
+  top: 0;
+  font-size: 17px;
+  border: 1px solid black;
+  text-align: end;
+  width: 100%;
+  height: 50px;
+  background: #f1f1f1;
+  padding: 10px;
+}
+.header a {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+/* Style the submit button */
+form.example button {
+  float: left;
+  width: 20%;
+  padding: 10px;
+  background: #2196f3;
+  color: white;
+  font-size: 17px;
+  border: 1px solid black;
+  border-left: none; /* Prevent double borders */
+  cursor: pointer;
+}
+
+/* About section */
+.about {
+  padding: 10px;
+  font-size: 16px;
+  font-weight: 400;
+  border: 1px solid black;
+  width: 80%;
+  height: 150px;
+  background: #f1f1f1;
+  margin-top: 60px;
+}
+/* Experience section */
+.experience {
+  font-size: 17px;
+  border: 1px solid black;
+  float: left;
+  width: 80%;
+  height: 400px;
+  background: #f1f1f1;
+  margin-top: 10px;
+  padding: 20px;
+}
+/* style the experience button */
+#addExperience {
+  float: right;
+  width: 10%;
+  padding: 10px;
+  background: #2196f3;
+  color: white;
+  font-size: 17px;
+  border: 1px solid black;
+  cursor: pointer;
+  margin-top: -60px;
+}
+/* Add experience section */
+
+#experienceForm {
+  width: 100%;
+  border: 1px solid black;
+  padding: 10px;
+  background-color: yellow;
+}
+/* style companyName */
+#companyName {
+  display: flex;
+}
+/* style startDate */
+#startDate {
+
+}
+/* style endDate  */
+#endDate{
+
+}
+.description {
+  padding: 10px;
+  font-size: 16px;
+  font-weight: 400;
+  border: 1px solid black;
+  width: 100%;
+  background: #f1f1f1;
+  /* margin-top: 60px; */
+}
+/* style addExperienceForm button */
+#addExperienceForm button {
+  float: right;
+  width: 10%;
+  padding: 10px;
+  background: #2196f3;
+  color: white;
+  font-size: 17px;
+  border: 1px solid black;
+  cursor: pointer;
+  margin-top: 5px;
+}
+/* style footer section */
+.footer {
+  position: fixed;
+  font-size: 17px;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 50px;
+  background: #f1f1f1;
+  text-align: end;
+  border: 1px solid black;
+  padding: 10px;
+}
+.footer a {
+  font-size: 18px;
+  font-weight: 600;
+}
+/* sidebar section */
+.sidebar {
+  width: 310px;
+  height: 560px;
+  right: 0;
+  border: 1px solid black;
+  margin-top: -150px;
+  background-color: #f1f1f1;
+  position: fixed;
+  overflow: auto;
+}
+.avatar {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 10px 0px 0px 90px;
+}
+.skill {
+  margin: 10px 0px 0px 40px;
+}
+
+.skill h1 {
+  font-size: 20px;
+  font-weight: 600;
+  text-align: center;
+}
+.skill h2 {
+  font-size: 18px;
+  font-weight: 600;
+}
+.skill ul li {
+  font-size: 16px;
+  font-weight: 400;
+}
