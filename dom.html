@@ -5,28 +5,43 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="dom.css" />
-    <title>Portfolio page</title>
-      <style>
-        /* Style for the experiences section */
-        #experiences {
-            border: 1px solid #ccc;
-            padding: 10px;
-            max-height: 300px; /* Add a max height and enable scrolling */
-            /* Enable vertical scrollbar  */
-             overflow-y: auto;     
-        }
-
-        /* Style for the form (initially hidden) */
-        #experienceForm {
-           display: none; 
-        }
+    <title>JavaScript DOM Manipulation</title>
+    <style>
+      #experienceForm {
+        display: none;
+        flex-direction: column;
+        margin-top: 10px;
+      }
+      #experienceForm label,
+      #experienceForm textarea,
+      #experienceForm input,
+      #experienceForm button {
+        margin-bottom: 10px;
+        display: flex;
+        flex-direction: column;
+      }
+      #experienceForm label[for="companyName"],
+      #experienceForm input[type="text"],
+      #experienceForm label[for="startDate"],
+      #experienceForm input[type="date"],
+      #experienceForm label[for="endDate"],
+      #experienceForm input[type="date"] {
+        flex-direction: row;
+        align-items: center;
+      }
+      .experience-entry {
+        margin: 10px 0;
+        padding: 10px;
+        border: 1px solid #ccc;
+        background-color: #f0f0f0;
+      }
     </style>
     <header>
       <!-- The Header section -->
       <div class="header">
-          <a href="http://127.0.0.1:5500/signup.html">Login!</a>
+        <a href="signup.html">Login!</a>
       </div>
-  </header>
+    </header>
   </head>
   <body>
     <section class="portfolio">
@@ -42,59 +57,60 @@
         </p>
       </div>
       <!-- Experience section -->
-      <div class="experience">
-        <h2>Experience</h2>
+      <!-- <nav>
+            <a href="portfolio.html">Back to Portfolio</a>
+        </nav> -->
+      <div id="experiences">
+        <h2>Add Experience</h2>
         <button id="addExperience">Add</button>
         <div id="experienceForm">
           <form id="addExperienceForm">
-            <h3>Add Experience</h3>
             <label for="companyName">Company Name:</label>
-            <input type="text" id="companyName" required><br>
+            <input type="text" id="companyName" required />
             <label for="startDate">Start Date:</label>
-            <input type="date" id="startDate" required><br>
+            <input type="date" id="startDate" required />
             <label for="endDate">End Date:</label>
-            <input type="date" id="endDate"><br>
-            <div class="description">
-              <p>
-                My name is Fazila Abbasi.I am from Rahim Yar Khan.I am a Wordpress
-                developer.I have completed my internship at CodeNinja. I also have a 3
-                month experience of Data Annotation.I clear my Matric and FSC from
-                Daanish School Rahim Yar Khan. I clear my BSCS (2018-2022) from Govt
-                Khawaja Fareed P/G college Rahim Yar Khan.
-              </p>
-            </div>
+            <input type="date" id="endDate" />
+            <label for="description">Description:</label>
+            <textarea id="description" rows="4"></textarea>
             <button type="submit">Save</button>
           </form>
         </div>
-        <script>
-            document.getElementById('addExperience').addEventListener('click', function() {
-                // Show the experience form
-                document.getElementById('experienceForm').style.display = 'block';
-            });
-    
-            document.getElementById('addExperienceForm').addEventListener('submit', function(event) {
-                event.preventDefault();
-    
-                // Get values from the form
-                const companyName = document.getElementById('companyName').value;
-                const startDate = document.getElementById('startDate').value;
-                const endDate = document.getElementById('endDate').value;
-                const description = document.getElementById('description').value;
-    
-                // Create a new experience entry
-                const experienceEntry = document.createElement('div');
-                experienceEntry.innerHTML = `<strong>${companyName}</strong><br>Start Date: ${startDate}<br>End Date: ${endDate}<br>Description: ${description}`;
-    
-                // Append the experience entry to the experiences section
-                document.getElementById('experiences').appendChild(experienceEntry);
-    
-                // Reset the form and hide it
-                document.getElementById('addExperienceForm').reset();
-                document.getElementById('experienceForm').style.display = 'none';
-            });
-        </script>
+      </div>
 
-      </div> 
+      <script>
+        document
+          .getElementById("addExperience")
+          .addEventListener("click", function () {
+            document.getElementById("experienceForm").style.display = "flex";
+          });
+
+        document
+          .getElementById("addExperienceForm")
+          .addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            const companyName = document.getElementById("companyName").value;
+            const startDate = document.getElementById("startDate").value;
+            const endDate = document.getElementById("endDate").value;
+            const description = document.getElementById("description").value;
+
+            const experienceEntry = document.createElement("div");
+            experienceEntry.classList.add("experience-entry");
+            experienceEntry.innerHTML = `
+                <strong>${companyName}</strong>
+                <div>Start Date: ${startDate}</div>
+                <div>End Date: ${endDate}</div>
+                <div>Description: ${description}</div>
+            `;
+
+            document.getElementById("experiences").appendChild(experienceEntry);
+
+            document.getElementById("addExperienceForm").reset();
+            document.getElementById("experienceForm").style.display = "none";
+          });
+      </script>
+
       <!-- Sidebar section -->
       <div class="sidebar">
         <div>
@@ -124,7 +140,9 @@
   </body>
   <footer>
     <div class="footer">
-        <a href="https://www.linkedin.com/in/fazila-abbasi-a07b18264/">Link to My LinkedIn Profile!</a>
+      <a href="https://www.linkedin.com/in/fazila-abbasi-a07b18264/"
+        >Link to My LinkedIn Profile!</a
+      >
     </div>
-</footer>
+  </footer>
 </html>
