@@ -6,38 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="dom.css" />
     <title>JavaScript DOM Manipulation</title>
-    <style>
-      #experienceForm {
-        display: none;
-        flex-direction: column;
-        margin-top: 10px;
-      }
-      #experienceForm label,
-      #experienceForm textarea,
-      #experienceForm input,
-      #experienceForm button {
-        margin-bottom: 10px;
-        display: flex;
-        flex-direction: column;
-      }
-      #experienceForm label[for="companyName"],
-      #experienceForm input[type="text"],
-      #experienceForm label[for="startDate"],
-      #experienceForm input[type="date"],
-      #experienceForm label[for="endDate"],
-      #experienceForm input[type="date"] {
-        flex-direction: row;
-        align-items: center;
-      }
-      .experience-entry {
-        margin: 10px 0;
-        padding: 10px;
-        border: 1px solid #ccc;
-        background-color: #f0f0f0;
-      }
-    </style>
     <header>
-      <!-- The Header section -->
       <div class="header">
         <a href="signup.html">Login!</a>
       </div>
@@ -45,7 +14,6 @@
   </head>
   <body>
     <section class="portfolio">
-      <!-- About section -->
       <div class="about">
         <h1>About</h1>
         <p>
@@ -56,13 +24,14 @@
           Khawaja Fareed P/G college Rahim Yar Khan.
         </p>
       </div>
-      <!-- Experience section -->
-      <!-- <nav>
-            <a href="portfolio.html">Back to Portfolio</a>
-        </nav> -->
       <div id="experiences">
-        <h2>Add Experience</h2>
-        <button id="addExperience">Add</button>
+        <nav>
+          <a href="index.html">Back to index.html</a>
+        </nav>
+        <div class="flex-containerone">
+          <div>Add Experience</div>
+          <button id="addExperience">Add</button>
+        </div>
         <div id="experienceForm">
           <form id="addExperienceForm">
             <label for="companyName">Company Name:</label>
@@ -73,7 +42,11 @@
             <input type="date" id="endDate" />
             <label for="description">Description:</label>
             <textarea id="description" rows="4"></textarea>
-            <button type="submit">Save</button>
+
+            <div class="flex-container">
+              <div>Click to Save</div>
+              <button type="submit">Save</button>
+            </div>
           </form>
         </div>
       </div>
@@ -110,8 +83,6 @@
             document.getElementById("experienceForm").style.display = "none";
           });
       </script>
-
-      <!-- Sidebar section -->
       <div class="sidebar">
         <div>
           <img src="New Project (40).webp" alt="Avatar" class="avatar" />
