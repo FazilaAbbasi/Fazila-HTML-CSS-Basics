@@ -70,15 +70,6 @@ body {
   display: flex;
   flex-direction: column;
 }
-.experience-form label[for="companyName"],
-.experience-form input[type="text"],
-.experience-form label[for="startDate"],
-.eexperience-forminput[type="date"],
-.experience-form label[for="endDate"],
-.experience-form input[type="date"] {
-  flex-direction: row;
-  align-items: center;
-}
 .experience-entry {
   margin: 10px 0;
   padding: 10px;
