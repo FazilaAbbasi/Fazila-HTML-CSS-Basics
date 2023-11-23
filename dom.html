@@ -24,24 +24,24 @@
           Khawaja Fareed P/G college Rahim Yar Khan.
         </p>
       </div>
-      <div id="experiences">
+      <div class="experiences">
         <nav>
           <a href="index.html">Back to index.html</a>
         </nav>
         <div class="flex-containerone">
           <div>Add Experience</div>
-          <button id="addExperience">Add</button>
+          <button class="add-experience">Add</button>
         </div>
-        <div id="experienceForm">
-          <form id="addExperienceForm">
+        <div class="experience-form">
+          <form class="add-experience-form">
             <label for="companyName">Company Name:</label>
-            <input type="text" id="companyName" required />
+            <input type="text" class="company-name" required />
             <label for="startDate">Start Date:</label>
-            <input type="date" id="startDate" required />
+            <input type="date" class="start-date" required />
             <label for="endDate">End Date:</label>
-            <input type="date" id="endDate" />
+            <input type="date" class="end-date" />
             <label for="description">Description:</label>
-            <textarea id="description" rows="4"></textarea>
+            <textarea class="description" rows="4"></textarea>
 
             <div class="flex-container">
               <div>Click to Save</div>
@@ -53,20 +53,20 @@
 
       <script>
         document
-          .getElementById("addExperience")
+          .querySelector(".add-experience")
           .addEventListener("click", function () {
-            document.getElementById("experienceForm").style.display = "flex";
+            document.querySelector(".experience-form").style.display = "flex";
           });
 
         document
-          .getElementById("addExperienceForm")
+          .querySelector(".add-experience-form")
           .addEventListener("submit", function (event) {
             event.preventDefault();
 
-            const companyName = document.getElementById("companyName").value;
-            const startDate = document.getElementById("startDate").value;
-            const endDate = document.getElementById("endDate").value;
-            const description = document.getElementById("description").value;
+            const companyName = document.querySelector(".company-name").value;
+            const startDate = document.querySelector(".start-date").value;
+            const endDate = document.querySelector(".end-date").value;
+            const description = document.querySelector(".description").value;
 
             const experienceEntry = document.createElement("div");
             experienceEntry.classList.add("experience-entry");
@@ -77,12 +77,13 @@
                 <div>Description: ${description}</div>
             `;
 
-            document.getElementById("experiences").appendChild(experienceEntry);
+            document.querySelector(".experiences").appendChild(experienceEntry);
 
-            document.getElementById("addExperienceForm").reset();
-            document.getElementById("experienceForm").style.display = "none";
+            document.querySelector(".add-experience-form").reset();
+            document.querySelector(".experience-form").style.display = "none";
           });
       </script>
+
       <div class="sidebar">
         <div>
           <img src="New Project (40).webp" alt="Avatar" class="avatar" />
