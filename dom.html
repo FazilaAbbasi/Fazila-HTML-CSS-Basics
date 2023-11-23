@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="dom.css" />
+    <title>JavaScript DOM Manipulation</title>
+    <header>
+      <div class="header">
+        <a href="signup.html">Login!</a>
+      </div>
+    </header>
+  </head>
+  <body>
+    <section class="portfolio">
+      <div class="about">
+        <h1>About</h1>
+        <p>
+          My name is Fazila Abbasi.I am from Rahim Yar Khan.I am a Wordpress
+          developer.I have completed my internship at CodeNinja. I also have a 3
+          month experience of Data Annotation.I clear my Matric and FSC from
+          Daanish School Rahim Yar Khan. I clear my BSCS (2018-2022) from Govt
+          Khawaja Fareed P/G college Rahim Yar Khan.
+        </p>
+      </div>
+      <div id="experiences">
+        <nav>
+          <a href="index.html">Back to index.html</a>
+        </nav>
+        <div class="flex-containerone">
+          <div>Add Experience</div>
+          <button id="addExperience">Add</button>
+        </div>
+        <div id="experienceForm">
+          <form id="addExperienceForm">
+            <label for="companyName">Company Name:</label>
+            <input type="text" id="companyName" required />
+            <label for="startDate">Start Date:</label>
+            <input type="date" id="startDate" required />
+            <label for="endDate">End Date:</label>
+            <input type="date" id="endDate" />
+            <label for="description">Description:</label>
+            <textarea id="description" rows="4"></textarea>
+
+            <div class="flex-container">
+              <div>Click to Save</div>
+              <button type="submit">Save</button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <script>
+        document
+          .getElementById("addExperience")
+          .addEventListener("click", function () {
+            document.getElementById("experienceForm").style.display = "flex";
+          });
+
+        document
+          .getElementById("addExperienceForm")
+          .addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            const companyName = document.getElementById("companyName").value;
+            const startDate = document.getElementById("startDate").value;
+            const endDate = document.getElementById("endDate").value;
+            const description = document.getElementById("description").value;
+
+            const experienceEntry = document.createElement("div");
+            experienceEntry.classList.add("experience-entry");
+            experienceEntry.innerHTML = `
+                <strong>${companyName}</strong>
+                <div>Start Date: ${startDate}</div>
+                <div>End Date: ${endDate}</div>
+                <div>Description: ${description}</div>
+            `;
+
+            document.getElementById("experiences").appendChild(experienceEntry);
+
+            document.getElementById("addExperienceForm").reset();
+            document.getElementById("experienceForm").style.display = "none";
+          });
+      </script>
+      <div class="sidebar">
+        <div>
+          <img src="New Project (40).webp" alt="Avatar" class="avatar" />
+        </div>
+        <div class="skill">
+          <h1>Fazila Abbasi</h1>
+          <h2>Skill's</h2>
+          <ul>
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>MS Word</li>
+            <li>MS Excel</li>
+            <li>Power Point</li>
+            <li>Java Script</li>
+            <li>Team Working</li>
+            <li>Documentation</li>
+            <li>Event Planning</li>
+            <li>Project Reports</li>
+            <li>Communication Skills</li>
+            <li>Presentation Skills</li>
+            <li>Project Management</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </body>
+  <footer>
+    <div class="footer">
+      <a href="https://www.linkedin.com/in/fazila-abbasi-a07b18264/"
+        >Link to My LinkedIn Profile!</a
+      >
+    </div>
+  </footer>
+</html>

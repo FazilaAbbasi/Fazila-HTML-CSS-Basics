@@ -1,0 +1,163 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  margin-left: auto;
+  margin-right: auto;
+}
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  font-size: 17px;
+  border: 1px solid black;
+  text-align: end;
+  width: 100%;
+  height: 50px;
+  background: #f1f1f1;
+  padding: 10px;
+}
+.header a {
+  font-size: 20px;
+  font-weight: 600;
+}
+.about {
+  padding: 10px;
+  font-size: 16px;
+  font-weight: 400;
+  border: 1px solid black;
+  width: 80%;
+  height: 150px;
+  background: #f1f1f1;
+  margin-top: 60px;
+}
+#experiences {
+  border: 1px solid black;
+  background: #f1f1f1;
+  padding: 10px;
+  width: 80%;
+  height: 200vh;
+  max-height: 300px;
+  overflow-y: auto;
+  margin-top: 10px;
+}
+.flex-containerone {
+  display: flex;
+  justify-content: space-between; /* Items are spaced evenly along the main axis, pushing the button to the right */
+  font-size: 25px;
+  font-weight: 600;
+  margin-top: 10px;
+}
+#addExperience {
+  width: 10%;
+  padding: 10px;
+  background: #2196f3;
+  color: white;
+  font-size: 17px;
+  border: 1px solid black;
+  cursor: pointer;
+}
+#experienceForm {
+  display: none;
+  flex-direction: column;
+  margin-top: 10px;
+}
+#experienceForm label,
+#experienceForm textarea,
+#experienceForm input,
+#experienceForm button {
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+}
+#experienceForm label[for="companyName"],
+#experienceForm input[type="text"],
+#experienceForm label[for="startDate"],
+#experienceForm input[type="date"],
+#experienceForm label[for="endDate"],
+#experienceForm input[type="date"] {
+  flex-direction: row;
+  align-items: center;
+}
+.experience-entry {
+  margin: 10px 0;
+  padding: 10px;
+  border: 1px solid #ccc;
+  background-color: #f0f0f0;
+}
+#description {
+  font-size: 16px;
+  font-weight: 400;
+  border: 1px solid black;
+  width: 100%;
+  background: #f1f1f1;
+  margin-top: 20px;
+}
+.flex-container {
+  display: flex;
+  justify-content: space-between; /* Items are spaced evenly along the main axis, pushing the button to the right */
+  font-size: 25px;
+  font-weight: 600;
+  margin-top: 10px;
+}
+button {
+  width: 10%;
+  padding: 10px;
+  background: #2196f3;
+  color: white;
+  font-size: 17px;
+  border: 1px solid black;
+  cursor: pointer;
+  align-items: center;
+}
+.footer {
+  position: fixed;
+  font-size: 17px;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 50px;
+  background: #f1f1f1;
+  text-align: end;
+  border: 1px solid black;
+  padding: 10px;
+}
+.footer a {
+  font-size: 18px;
+  font-weight: 600;
+}
+.sidebar {
+  width: 310px;
+  height: 610px;
+  right: 0;
+  top: 0;
+  border: 1px solid black;
+  margin-top: 60px;
+  background-color: #f1f1f1;
+  position: fixed;
+  overflow: auto;
+}
+.avatar {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 10px 0px 0px 90px;
+}
+.skill {
+  margin: 10px 0px 0px 40px;
+}
+
+.skill h1 {
+  font-size: 20px;
+  font-weight: 600;
+  text-align: center;
+}
+.skill h2 {
+  font-size: 18px;
+  font-weight: 600;
+}
+.skill ul li {
+  font-size: 16px;
+  font-weight: 400;
+}
