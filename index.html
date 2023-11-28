@@ -9,9 +9,9 @@
     <header>
       <!-- The Header section -->
       <div class="header">
-          <a href="signup.html">Login!</a>
+        <a href="signup.html">Login!</a>
       </div>
-  </header>
+    </header>
   </head>
   <body>
     <section class="portfolio">
@@ -26,10 +26,37 @@
           Khawaja Fareed P/G college Rahim Yar Khan.
         </p>
       </div>
-      <!-- Experience section -->
-      <div class="experience">
-        <h1>Experience</h1>
+      <div class="experiences">
+        <nav>
+          <a href="dom.html">JavaScript DOM Manipulation!</a>
+        </nav>
+
+        <div id="experiencesList"></div>
       </div>
+
+      <script>
+        const storedExperiences =
+          JSON.parse(localStorage.getItem("experiences")) || [];
+
+        for (const experience of storedExperiences) {
+          displayExperience(experience);
+        }
+
+        function displayExperience(experience) {
+          const experienceEntry = document.createElement("div");
+          experienceEntry.classList.add("experience-entry");
+          experienceEntry.innerHTML = `
+        <strong>${experience.companyName}</strong>
+        <div>Start Date: ${experience.startDate}</div>
+        <div>End Date: ${experience.endDate}</div>
+        <div>Description: ${experience.description}</div>
+    `;
+
+          document
+            .getElementById("experiencesList")
+            .appendChild(experienceEntry);
+        }
+      </script>
       <!-- Sidebar section -->
       <div class="sidebar">
         <div>
@@ -59,7 +86,9 @@
   </body>
   <footer>
     <div class="footer">
-        <a href="https://www.linkedin.com/in/fazila-abbasi-a07b18264/">Link to My LinkedIn Profile!</a>
+      <a href="https://www.linkedin.com/in/fazila-abbasi-a07b18264/"
+        >Link to My LinkedIn Profile!</a
+      >
     </div>
-</footer>
+  </footer>
 </html>

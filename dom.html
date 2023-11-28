@@ -26,14 +26,13 @@
       </div>
       <div class="experiences">
         <nav>
-          <a href="index.html">Back to index.html</a>
+          <a href="index.html">Portfolio!</a>
         </nav>
-        <div class="flex-containerone">
-          <div>Add Experience</div>
-          <button class="add-experience">Add</button>
-        </div>
-        <div class="experience-form">
+        <div class="add-experience">Add Experience</div>
+
+        <div class="experience-form" style="display: none">
           <form class="add-experience-form">
+            <!-- Your form fields go here -->
             <label for="companyName">Company Name:</label>
             <input type="text" class="company-name" required />
             <label for="startDate">Start Date:</label>
@@ -52,6 +51,13 @@
       </div>
 
       <script>
+        const storedExperiences =
+          JSON.parse(localStorage.getItem("experiences")) || [];
+
+        for (const experience of storedExperiences) {
+          displayExperience(experience);
+        }
+
         document
           .querySelector(".add-experience")
           .addEventListener("click", function () {
@@ -68,22 +74,38 @@
             const endDate = document.querySelector(".end-date").value;
             const description = document.querySelector(".description").value;
 
-            const experienceEntry = document.createElement("div");
-            experienceEntry.classList.add("experience-entry");
-            experienceEntry.innerHTML = `
-                <strong>${companyName}</strong>
-                <div>Start Date: ${startDate}</div>
-                <div>End Date: ${endDate}</div>
-                <div>Description: ${description}</div>
-            `;
+            const newExperience = {
+              companyName: companyName,
+              startDate: startDate,
+              endDate: endDate,
+              description: description,
+            };
 
-            document.querySelector(".experiences").appendChild(experienceEntry);
+            storedExperiences.push(newExperience);
+            localStorage.setItem(
+              "experiences",
+              JSON.stringify(storedExperiences)
+            );
+
+            displayExperience(newExperience);
 
             document.querySelector(".add-experience-form").reset();
             document.querySelector(".experience-form").style.display = "none";
           });
-      </script>
 
+        function displayExperience(experience) {
+          const experienceEntry = document.createElement("div");
+          experienceEntry.classList.add("experience-entry");
+          experienceEntry.innerHTML = `
+                <strong>${experience.companyName}</strong>
+                <div>Start Date: ${experience.startDate}</div>
+                <div>End Date: ${experience.endDate}</div>
+                <div>Description: ${experience.description}</div>
+            `;
+
+          document.querySelector(".experiences").appendChild(experienceEntry);
+        }
+      </script>
       <div class="sidebar">
         <div>
           <img src="New Project (40).webp" alt="Avatar" class="avatar" />
