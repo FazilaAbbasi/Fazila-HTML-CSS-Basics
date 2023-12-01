@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="style.css" />
     <title>Portfolio page</title>
     <header>
-      <!-- The Header section -->
       <div class="header">
         <a href="signup.html">Login!</a>
       </div>
@@ -15,7 +14,6 @@
   </head>
   <body>
     <section class="portfolio">
-      <!-- About section -->
       <div class="about">
         <h1>About</h1>
         <p>
@@ -34,30 +32,6 @@
         <div id="experiencesList"></div>
       </div>
 
-      <script>
-        const storedExperiences =
-          JSON.parse(localStorage.getItem("experiences")) || [];
-
-        for (const experience of storedExperiences) {
-          displayExperience(experience);
-        }
-
-        function displayExperience(experience) {
-          const experienceEntry = document.createElement("div");
-          experienceEntry.classList.add("experience-entry");
-          experienceEntry.innerHTML = `
-        <strong>${experience.companyName}</strong>
-        <div>Start Date: ${experience.startDate}</div>
-        <div>End Date: ${experience.endDate}</div>
-        <div>Description: ${experience.description}</div>
-    `;
-
-          document
-            .getElementById("experiencesList")
-            .appendChild(experienceEntry);
-        }
-      </script>
-      <!-- Sidebar section -->
       <div class="sidebar">
         <div>
           <img src="New Project (40).webp" alt="Avatar" class="avatar" />
@@ -83,12 +57,33 @@
         </div>
       </div>
     </section>
+    <footer>
+      <div class="footer">
+        <a href="https://www.linkedin.com/in/fazila-abbasi-a07b18264/"
+          >Link to My LinkedIn Profile!</a
+        >
+      </div>
+    </footer>
+    <script>
+      const storedExperiences =
+        JSON.parse(localStorage.getItem("experiences")) || [];
+
+      for (const experience of storedExperiences) {
+        displayExperience(experience);
+      }
+
+      function displayExperience(experience) {
+        const experienceEntry = document.createElement("div");
+        experienceEntry.classList.add("experience-entry");
+        experienceEntry.innerHTML = `
+      <strong>${experience.companyName}</strong>
+      <div>Start Date: ${experience.startDate}</div>
+      <div>End Date: ${experience.endDate}</div>
+      <div>Description: ${experience.description}</div>
+  `;
+
+        document.getElementById("experiencesList").appendChild(experienceEntry);
+      }
+    </script>
   </body>
-  <footer>
-    <div class="footer">
-      <a href="https://www.linkedin.com/in/fazila-abbasi-a07b18264/"
-        >Link to My LinkedIn Profile!</a
-      >
-    </div>
-  </footer>
 </html>

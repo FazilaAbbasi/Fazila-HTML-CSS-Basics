@@ -32,7 +32,6 @@
 
         <div class="experience-form" style="display: none">
           <form class="add-experience-form">
-            <!-- Your form fields go here -->
             <label for="companyName">Company Name:</label>
             <input type="text" class="company-name" required />
             <label for="startDate">Start Date:</label>
@@ -50,62 +49,6 @@
         </div>
       </div>
 
-      <script>
-        const storedExperiences =
-          JSON.parse(localStorage.getItem("experiences")) || [];
-
-        for (const experience of storedExperiences) {
-          displayExperience(experience);
-        }
-
-        document
-          .querySelector(".add-experience")
-          .addEventListener("click", function () {
-            document.querySelector(".experience-form").style.display = "flex";
-          });
-
-        document
-          .querySelector(".add-experience-form")
-          .addEventListener("submit", function (event) {
-            event.preventDefault();
-
-            const companyName = document.querySelector(".company-name").value;
-            const startDate = document.querySelector(".start-date").value;
-            const endDate = document.querySelector(".end-date").value;
-            const description = document.querySelector(".description").value;
-
-            const newExperience = {
-              companyName: companyName,
-              startDate: startDate,
-              endDate: endDate,
-              description: description,
-            };
-
-            storedExperiences.push(newExperience);
-            localStorage.setItem(
-              "experiences",
-              JSON.stringify(storedExperiences)
-            );
-
-            displayExperience(newExperience);
-
-            document.querySelector(".add-experience-form").reset();
-            document.querySelector(".experience-form").style.display = "none";
-          });
-
-        function displayExperience(experience) {
-          const experienceEntry = document.createElement("div");
-          experienceEntry.classList.add("experience-entry");
-          experienceEntry.innerHTML = `
-                <strong>${experience.companyName}</strong>
-                <div>Start Date: ${experience.startDate}</div>
-                <div>End Date: ${experience.endDate}</div>
-                <div>Description: ${experience.description}</div>
-            `;
-
-          document.querySelector(".experiences").appendChild(experienceEntry);
-        }
-      </script>
       <div class="sidebar">
         <div>
           <img src="New Project (40).webp" alt="Avatar" class="avatar" />
@@ -131,12 +74,68 @@
         </div>
       </div>
     </section>
+    <footer>
+      <div class="footer">
+        <a href="https://www.linkedin.com/in/fazila-abbasi-a07b18264/"
+          >Link to My LinkedIn Profile!</a
+        >
+      </div>
+    </footer>
+    <script>
+      const storedExperiences =
+        JSON.parse(localStorage.getItem("experiences")) || [];
+
+      for (const experience of storedExperiences) {
+        displayExperience(experience);
+      }
+
+      document
+        .querySelector(".add-experience")
+        .addEventListener("click", function () {
+          document.querySelector(".experience-form").style.display = "flex";
+        });
+
+      document
+        .querySelector(".add-experience-form")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
+
+          const companyName = document.querySelector(".company-name").value;
+          const startDate = document.querySelector(".start-date").value;
+          const endDate = document.querySelector(".end-date").value;
+          const description = document.querySelector(".description").value;
+
+          const newExperience = {
+            companyName: companyName,
+            startDate: startDate,
+            endDate: endDate,
+            description: description,
+          };
+
+          storedExperiences.push(newExperience);
+          localStorage.setItem(
+            "experiences",
+            JSON.stringify(storedExperiences)
+          );
+
+          displayExperience(newExperience);
+
+          document.querySelector(".add-experience-form").reset();
+          document.querySelector(".experience-form").style.display = "none";
+        });
+
+      function displayExperience(experience) {
+        const experienceEntry = document.createElement("div");
+        experienceEntry.classList.add("experience-entry");
+        experienceEntry.innerHTML = `
+              <strong>${experience.companyName}</strong>
+              <div>Start Date: ${experience.startDate}</div>
+              <div>End Date: ${experience.endDate}</div>
+              <div>Description: ${experience.description}</div>
+          `;
+
+        document.querySelector(".experiences").appendChild(experienceEntry);
+      }
+    </script>
   </body>
-  <footer>
-    <div class="footer">
-      <a href="https://www.linkedin.com/in/fazila-abbasi-a07b18264/"
-        >Link to My LinkedIn Profile!</a
-      >
-    </div>
-  </footer>
 </html>
