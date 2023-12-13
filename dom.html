@@ -33,13 +33,16 @@
         <div class="experience-form" style="display: none">
           <form class="add-experience-form">
             <label for="companyName">Company Name:</label>
-            <input type="text" class="company-name" required />
+            <input type="text" id="company-name" required />
+
             <label for="startDate">Start Date:</label>
-            <input type="date" class="start-date" required />
+            <input type="date" id="start-date" required />
+
             <label for="endDate">End Date:</label>
-            <input type="date" class="end-date" />
+            <input type="date" id="end-date" />
+
             <label for="description">Description:</label>
-            <textarea class="description" rows="4"></textarea>
+            <textarea id="description" rows="4"></textarea>
 
             <div class="flex-container">
               <div>Click to Save</div>
@@ -99,11 +102,10 @@
         .querySelector(".add-experience-form")
         .addEventListener("submit", function (event) {
           event.preventDefault();
-
-          const companyName = document.querySelector(".company-name").value;
-          const startDate = document.querySelector(".start-date").value;
-          const endDate = document.querySelector(".end-date").value;
-          const description = document.querySelector(".description").value;
+          const companyName = document.getElementById("company-name").value;
+          const startDate = document.getElementById("start-date").value;
+          const endDate = document.getElementById("end-date").value;
+          const description = document.getElementById("description").value;
 
           const newExperience = {
             companyName: companyName,
