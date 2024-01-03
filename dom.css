@@ -42,11 +42,60 @@ body {
   overflow-y: auto;
   margin-top: 10px;
 }
+.add-experience {
+  font-size: 14px;
+  font-weight: 400;
+  width: 10%;
+  padding: 10px;
+  margin-top: 10px;
+  background: #2196f3;
+  color: white;
+  border: 1px solid black;
+  cursor: pointer;
+}
+.experience-form {
+  display: none;
+  flex-direction: column;
+  margin-top: 10px;
+}
+.experience-form label,
+.experience-form textarea,
+.experience-form input,
+.experience-form button {
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+}
 .experience-entry {
   margin: 10px 0;
   padding: 10px;
   border: 1px solid #ccc;
   background-color: #f0f0f0;
+}
+#description {
+  font-size: 16px;
+  font-weight: 400;
+  border: 1px solid black;
+  width: 100%;
+  background: #f1f1f1;
+  margin-top: 20px;
+}
+.flex-container {
+  display: flex;
+  justify-content: space-between; /* Items are spaced evenly along the main axis, pushing the button to the right */
+  font-size: 25px;
+  font-weight: 600;
+  margin-top: 10px;
+}
+button {
+  width: 10%;
+  padding: 10px;
+  background: #2196f3;
+  color: white;
+  font-size: 17px;
+  border: 1px solid black;
+  cursor: pointer;
+  align-items: center;
 }
 .footer {
   position: fixed;
