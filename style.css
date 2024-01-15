@@ -10,6 +10,15 @@ body {
   position: fixed;
   top: 0;
   left: 0;
+  width: 100%;
+  height: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* style header section */
+.header {
+  position: fixed;
+  top: 0;
   font-size: 17px;
   border: 1px solid black;
   text-align: end;
@@ -22,6 +31,20 @@ body {
   font-size: 20px;
   font-weight: 600;
 }
+/* Style the submit button */
+form.example button {
+  float: left;
+  width: 20%;
+  padding: 10px;
+  background: #2196f3;
+  color: white;
+  font-size: 17px;
+  border: 1px solid black;
+  border-left: none; /* Prevent double borders */
+  cursor: pointer;
+}
+
+/* About section */
 .about {
   padding: 10px;
   font-size: 16px;
@@ -48,6 +71,23 @@ body {
   border: 1px solid #ccc;
   background-color: #f0f0f0;
 }
+  height: 200px;
+  background: #f1f1f1;
+  margin-top: 60px;
+}
+/* Experience section */
+.experience {
+  padding: 10px;
+  font-size: 17px;
+  border: 1px solid black;
+  float: left;
+  width: 80%;
+  height: 400px;
+  background: #f1f1f1;
+  margin-top: 10px;
+}
+
+/* style footer section */
 .footer {
   position: fixed;
   font-size: 17px;
@@ -64,6 +104,7 @@ body {
   font-size: 18px;
   font-weight: 600;
 }
+/* sidebar section */
 .sidebar {
   width: 310px;
   height: 610px;
@@ -71,6 +112,8 @@ body {
   top: 0;
   border: 1px solid black;
   margin-top: 60px;
+  border: 1px solid black;
+  margin-top: -200px;
   background-color: #f1f1f1;
   position: fixed;
   overflow: auto;
@@ -80,6 +123,9 @@ body {
   height: 150px;
   border-radius: 50%;
   object-fit: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   margin: 10px 0px 0px 90px;
 }
 .skill {
