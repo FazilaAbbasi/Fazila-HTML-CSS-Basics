@@ -10,15 +10,6 @@ body {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
-  margin-left: auto;
-  margin-right: auto;
-}
-/* style header section */
-.header {
-  position: fixed;
-  top: 0;
   font-size: 17px;
   border: 1px solid black;
   text-align: end;
@@ -31,20 +22,6 @@ body {
   font-size: 20px;
   font-weight: 600;
 }
-/* Style the submit button */
-form.example button {
-  float: left;
-  width: 20%;
-  padding: 10px;
-  background: #2196f3;
-  color: white;
-  font-size: 17px;
-  border: 1px solid black;
-  border-left: none; /* Prevent double borders */
-  cursor: pointer;
-}
-
-/* About section */
 .about {
   padding: 10px;
   font-size: 16px;
@@ -65,29 +42,61 @@ form.example button {
   overflow-y: auto;
   margin-top: 10px;
 }
+.add-experience {
+  font-size: 14px;
+  font-weight: 400;
+  width: 10%;
+  padding: 10px;
+  margin-top: 10px;
+  background: #2196f3;
+  color: white;
+  border: 1px solid black;
+  cursor: pointer;
+}
+.experience-form {
+  display: none;
+  flex-direction: column;
+  margin-top: 10px;
+}
+.experience-form label,
+.experience-form textarea,
+.experience-form input,
+.experience-form button {
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+}
 .experience-entry {
   margin: 10px 0;
   padding: 10px;
   border: 1px solid #ccc;
   background-color: #f0f0f0;
 }
-  height: 200px;
-  background: #f1f1f1;
-  margin-top: 60px;
-}
-/* Experience section */
-.experience {
-  padding: 10px;
-  font-size: 17px;
+.description {
+  font-size: 16px;
+  font-weight: 400;
   border: 1px solid black;
-  float: left;
-  width: 80%;
-  height: 400px;
+  width: 100%;
   background: #f1f1f1;
+  margin-top: 20px;
+}
+.flex-container {
+  display: flex;
+  justify-content: space-between; /* Items are spaced evenly along the main axis, pushing the button to the right */
+  font-size: 25px;
+  font-weight: 600;
   margin-top: 10px;
 }
-
-/* style footer section */
+button {
+  width: 10%;
+  padding: 10px;
+  background: #2196f3;
+  color: white;
+  font-size: 17px;
+  border: 1px solid black;
+  cursor: pointer;
+  align-items: center;
+}
 .footer {
   position: fixed;
   font-size: 17px;
@@ -104,7 +113,6 @@ form.example button {
   font-size: 18px;
   font-weight: 600;
 }
-/* sidebar section */
 .sidebar {
   width: 310px;
   height: 610px;
@@ -112,8 +120,6 @@ form.example button {
   top: 0;
   border: 1px solid black;
   margin-top: 60px;
-  border: 1px solid black;
-  margin-top: -200px;
   background-color: #f1f1f1;
   position: fixed;
   overflow: auto;
@@ -123,9 +129,6 @@ form.example button {
   height: 150px;
   border-radius: 50%;
   object-fit: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
   margin: 10px 0px 0px 90px;
 }
 .skill {

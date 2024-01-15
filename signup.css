@@ -6,6 +6,7 @@ body{
   height: 100%;
   margin-left: auto;
   margin-right: auto;
+  overflow: hidden; /* Prevent scrolling */
 }
 /* style header section */
 .header {
@@ -30,11 +31,15 @@ body{
   padding: 20px;
   margin-right: 20px;
   margin-left: 30px;
+  /* position: absolute; */
+  position: fixed;
+  left: calc(50% - 15%);
+  top: calc(20% - 20px);
+  border: 2px solid black;
   position: absolute;
   left: calc(50% - 15%);
   top: calc(20% - 20px);
   border: 2px solid black;
-
 }
 .container h1 {
   font-size: 30px;
@@ -61,10 +66,23 @@ button {
   width: 100%;
   opacity: 0.9;
 }
-
 button:hover {
   opacity: 1;
   background: #0b7dda;
+}
+.error {
+  color: red;
+}
+.error-field {
+  border: 1px solid red;
+}
+.success-message {
+  color: green;
+  margin-top: 50px;
+  padding: 20px;
+  font-weight: bold;
+  font-size: 18px;
+  text-align: center;
 }
 /* style footer section */
 .footer {
