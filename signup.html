@@ -45,12 +45,12 @@
 
     <script>
       async function submitForm() {
-        let isValid = validateForm();
-
-        if (isValid) {
+        if (validateForm()) {
           const name = document.getElementById("name").value;
           const email = document.getElementById("email").value;
           const password = document.getElementById("password").value;
+
+          console.log("Form Data:", name, email, password);
 
           try {
             const response = await fetch("https://dummyjson.com/users/add", {
@@ -65,19 +65,23 @@
 
             const result = await response.json();
 
-            console.log(name, email, password); // Log the user details to the console
+            //console.log("API Response:", result);
 
             if (response.ok) {
-              // Clear form and display success message
               document.getElementById("myForm").reset();
               document.getElementById("responseMessage").textContent =
                 "Registration successful from mock API 🙂";
               document.getElementById("responseMessage").style.color = "green";
             } else {
-              // Display error message from the API
+              let errorMessage = "Unknown error";
+
+              if (result && result.error) {
+                errorMessage = result.error;
+              }
+
               document.getElementById(
                 "responseMessage"
-              ).textContent = `Error: ${result.error}`;
+              ).textContent = `Error: ${errorMessage}`;
               document.getElementById("responseMessage").style.color = "red";
             }
           } catch (error) {
