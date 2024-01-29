@@ -71,6 +71,17 @@ body {
   padding: 10px;
   border: 1px solid #ccc;
   background-color: #f0f0f0;
+  position: relative;
+}
+.experience-entry button {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  cursor: pointer;
+}
+
+.filter-input {
+  margin-bottom: 10px;
 }
 .description {
   font-size: 16px;
