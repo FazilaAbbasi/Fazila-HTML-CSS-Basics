@@ -4,7 +4,8 @@
 body {
   margin-left: auto;
   margin-right: auto;
-  overflow: hidden; /* Prevent scrolling */
+  scroll-behavior: smooth;
+
 }
 .header {
   position: fixed;
@@ -37,8 +38,7 @@ body {
   background: #f1f1f1;
   padding: 10px;
   width: 80%;
-  height: 200vh;
-  max-height: 300px;
+  height: 450px;
   overflow-y: auto;
   margin-top: 10px;
 }
@@ -133,7 +133,10 @@ button {
   margin-top: 60px;
   background-color: #f1f1f1;
   position: fixed;
-  overflow: auto;
+}
+.sidebartwo {
+  width: 310px;
+  height: 610px;
 }
 .avatar {
   width: 150px;
@@ -158,4 +161,142 @@ button {
 .skill ul li {
   font-size: 16px;
   font-weight: 400;
+}
+@media only screen and (max-width: 600px) {
+  .about {
+    width: 100%;
+    height: 70%;
+    padding: 20px;
+    font-size: 28px;
+  }
+  .experiences {
+    width: 100%;
+    margin-top: 10px;
+    font-size: 28px;
+  }
+  .add-experience {
+    width: 20%;
+    margin-bottom: 10px;
+  }
+  .sidebar {
+    width: 100%;
+    position: relative;
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+  }
+  .sidebartwo {
+    width: 61%;
+  }
+  .image {
+    width: 100%;
+    align-items: center;
+  }
+  .avatar {
+    width: 200px;
+    height: 200px;
+  }
+  .skill {
+    margin-left: 112px;
+  }
+  .skill h1 h2 {
+    text-align: center;
+  }
+  .skill ul li {
+    font-size: 28px;
+    font-family: "Times New Roman", Times, serif;
+    align-items: center;
+  }
+  .flex-container button {
+    width: 20%;
+  }
+  .experience-entry button {
+    width: 20%;
+  }
+}
+@media only screen and (min-width: 601px) and (max-width: 768px) {
+
+  html {
+    scroll-behavior: smooth;
+  }
+  .header {
+    width: 100%;
+  }
+  .header a {
+    font-size: 30px;
+    font-weight: 600;
+  }
+  .about {
+    width: 100%;
+    height: 300%;
+    font-size: 22px;
+    margin-top: 60px;
+  }
+  .experiences {
+    width: 100%;
+    margin-top: 10px;
+    font-size: 28px;
+  }
+  .add-experience {
+    width: 25%;
+    margin-bottom: 10px;
+    font-size: 24px;
+  }
+  .experience-form input {
+    width: 30%;
+    height: 50%;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    font-size: 22px;
+  }
+  .experience-form button {
+    width: 25%;
+    font-size: 22px;
+  }
+  .filter-input {
+    width: 100%;
+    height: 20%;
+  }
+  #filter{
+    width: 40%;
+    height: 60%;
+  }
+  .experience-entry button {
+    width: 25%;
+    font-size: 22px;
+    margin-top: 10px;
+  }
+
+  .sidebar {
+    width: 100%;
+    height: 690px;
+    position: relative;
+    margin-top: 10px;
+    margin-bottom: 60px;
+    display: flex;
+    justify-content: center;
+  }
+  .sidebartwo {
+    width: 50%;
+    height: 670px;
+  }
+  .image {
+    width: 100%;
+    align-items: center;
+  }
+  .avatar {
+    width: 200px;
+    height: 200px;
+  }
+  .footer{
+    margin-top: 20px;
+  }
+  .footer a {
+    font-size: 28px;
+    font-weight: 600;
+  }
+  .skill ul li{
+    font-size: 25px;
+  }
 }
