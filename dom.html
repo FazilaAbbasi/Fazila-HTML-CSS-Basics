@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="dom.css" />
+  </head>
+  <body>
+    <header>
+      <div class="header">
+        <a href="signup.html">Login!</a>
+      </div>
+    </header>
+    <section class="portfolio">
+      <div class="about">
+        <h1>About</h1>
+        <p>
+          My name is Fazila Abbasi. I am from Rahim Yar Khan. I am a WordPress
+          developer. I have completed my internship at CodeNinja. I also have a
+          3-month experience of Data Annotation. I cleared my Matric and FSC
+          from Daanish School Rahim Yar Khan. I cleared my BSCS (2018-2022) from
+          Govt Khawaja Fareed P/G college Rahim Yar Khan.
+        </p>
+      </div>
+      <div class="experiences">
+        <nav>
+          <a href="index.html">Portfolio!</a>
+        </nav>
+        <div class="add-experience">Add Experience</div>
+
+        <!-- Declare variables for form elements -->
+        <div class="experience-form" style="display: none">
+          <form class="add-experience-form">
+            <label for="companyName">Company Name:</label>
+            <input type="text" class="company-name" required />
+            <label for="startDate">Start Date:</label>
+            <input type="date" class="start-date" required />
+            <label for="endDate">End Date:</label>
+            <input type="date" class="end-date" />
+            <label for="description">Description:</label>
+            <textarea class="description" rows="4"></textarea>
+
+            <div class="flex-container">
+              <button type="submit">Save</button>
+            </div>
+          </form>
+        </div>
+
+        <div class="filter-input">
+          <label for="filter">Search by Company Name:</label>
+          <input type="text" id="filter" oninput="filterExperiences()" />
+        </div>
+
+        <div class="experiences-list"></div>
+      </div>
+
+      <div class="sidebar">
+        <div class="sidebartwo">
+          <div class="image">
+            <img src="New Project (40).webp" alt="Avatar" class="avatar" />
+          </div>
+          <div class="skill">
+            <h1>Fazila Abbasi</h1>
+            <h2>Skills</h2>
+            <ul>
+              <li>HTML</li>
+              <li>CSS</li>
+              <li>MS Word</li>
+              <li>MS Excel</li>
+              <li>Power Point</li>
+              <li>JavaScript</li>
+              <li>Team Working</li>
+              <li>Documentation</li>
+              <li>Event Planning</li>
+              <li>Project Reports</li>
+              <li>Communication Skills</li>
+              <li>Presentation Skills</li>
+              <li>Project Management</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer>
+      <div class="footer">
+        <a href="https://www.linkedin.com/in/fazila-abbasi-a07b18264/"
+          >Link to My LinkedIn Profile!</a
+        >
+      </div>
+    </footer>
+    <script>
+      // Declare variables at the top of the script
+      const addExperienceButton = document.querySelector(".add-experience");
+      const experienceForm = document.querySelector(".experience-form");
+      const addExperienceForm = document.querySelector(".add-experience-form");
+      const storedExperiences =
+        JSON.parse(localStorage.getItem("experiences")) || [];
+      const descriptionElement = document.querySelector(".description");
+
+      // Initialize the page with stored experiences
+      for (const experience of storedExperiences) {
+        displayExperience(experience);
+      }
+
+      // Event listener for adding experience button
+      addExperienceButton.addEventListener("click", function () {
+        experienceForm.style.display = "block";
+      });
+
+      // Event listener for submitting the add experience form
+      addExperienceForm.addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        const companyName =
+          addExperienceForm.querySelector(".company-name").value;
+        const startDate = addExperienceForm.querySelector(".start-date").value;
+        const endDate = addExperienceForm.querySelector(".end-date").value;
+        const description =
+          addExperienceForm.querySelector(".description").value;
+
+        const newExperience = {
+          companyName: companyName,
+          startDate: startDate,
+          endDate: endDate,
+          description: description,
+        };
+
+        storedExperiences.push(newExperience);
+        localStorage.setItem("experiences", JSON.stringify(storedExperiences));
+
+        displayExperience(newExperience);
+
+        // Reset form and hide experience form
+        addExperienceForm.reset();
+        experienceForm.style.display = "none";
+      });
+
+      // Function to display an experience
+      function displayExperience(experience) {
+        const experienceEntry = document.createElement("div");
+        experienceEntry.classList.add("experience-entry");
+        experienceEntry.innerHTML = `
+        <strong>${experience.companyName}</strong>
+        <div>Start Date: ${experience.startDate}</div>
+        <div>End Date: ${experience.endDate}</div>
+        <div>Description: ${experience.description}</div>
+        <button onclick="deleteExperience(${storedExperiences.indexOf(
+          experience
+        )})">Delete</button>
+      `;
+        document
+          .querySelector(".experiences-list")
+          .appendChild(experienceEntry);
+      }
+
+      // Function to delete an experience
+      function deleteExperience(index) {
+        storedExperiences.splice(index, 1);
+        localStorage.setItem("experiences", JSON.stringify(storedExperiences));
+        updateDisplay();
+      }
+
+      // Function to update the display after deleting an experience
+      function updateDisplay() {
+        const experiencesList = document.querySelector(".experiences-list");
+        experiencesList.innerHTML = "";
+
+        for (const experience of storedExperiences) {
+          displayExperience(experience);
+        }
+      }
+
+      // Function to filter experiences
+      function filterExperiences() {
+        const filterValue = document
+          .getElementById("filter")
+          .value.toLowerCase();
+        const experienceEntries =
+          document.querySelectorAll(".experience-entry");
+
+        experienceEntries.forEach((entry) => {
+          const companyName = entry
+            .querySelector("strong")
+            .textContent.toLowerCase();
+          const displayStyle = companyName.includes(filterValue)
+            ? "block"
+            : "none";
+          entry.style.display = displayStyle;
+        });
+      }
+    </script>
+  </body>
+</html>
