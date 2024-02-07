@@ -42,7 +42,6 @@
             <textarea class="description" rows="4"></textarea>
 
             <div class="flex-container">
-              <div>Click to Save</div>
               <button type="submit">Save</button>
             </div>
           </form>
@@ -63,14 +62,14 @@
           </div>
           <div class="skill">
             <h1>Fazila Abbasi</h1>
-            <h2>Skill's</h2>
+            <h2>Skills</h2>
             <ul>
               <li>HTML</li>
               <li>CSS</li>
               <li>MS Word</li>
               <li>MS Excel</li>
               <li>Power Point</li>
-              <li>Java Script</li>
+              <li>JavaScript</li>
               <li>Team Working</li>
               <li>Documentation</li>
               <li>Event Planning</li>
@@ -91,30 +90,34 @@
       </div>
     </footer>
     <script>
+      // Declare variables at the top of the script
       const addExperienceButton = document.querySelector(".add-experience");
-      const addExperienceForm = document.querySelector(".add-experience-form");
       const experienceForm = document.querySelector(".experience-form");
+      const addExperienceForm = document.querySelector(".add-experience-form");
       const storedExperiences =
         JSON.parse(localStorage.getItem("experiences")) || [];
-
-      // Variable for the description element
       const descriptionElement = document.querySelector(".description");
 
+      // Initialize the page with stored experiences
       for (const experience of storedExperiences) {
         displayExperience(experience);
       }
 
+      // Event listener for adding experience button
       addExperienceButton.addEventListener("click", function () {
-        experienceForm.style.display = "flex";
+        experienceForm.style.display = "block";
       });
 
+      // Event listener for submitting the add experience form
       addExperienceForm.addEventListener("submit", function (event) {
         event.preventDefault();
 
-        const companyName = document.querySelector(".company-name").value;
-        const startDate = document.querySelector(".start-date").value;
-        const endDate = document.querySelector(".end-date").value;
-        const description = descriptionElement.value;
+        const companyName =
+          addExperienceForm.querySelector(".company-name").value;
+        const startDate = addExperienceForm.querySelector(".start-date").value;
+        const endDate = addExperienceForm.querySelector(".end-date").value;
+        const description =
+          addExperienceForm.querySelector(".description").value;
 
         const newExperience = {
           companyName: companyName,
@@ -133,43 +136,32 @@
         experienceForm.style.display = "none";
       });
 
-      function editExperience(index) {
-        const experience = storedExperiences[index];
-        experienceForm.style.display = "flex";
-
-        const companyName = document.querySelector(".company-name").value;
-        const startDate = document.querySelector(".start-date").value;
-        const endDate = document.querySelector(".end-date").value;
-        const description = descriptionElement.value;
-      }
-
+      // Function to display an experience
       function displayExperience(experience) {
         const experienceEntry = document.createElement("div");
         experienceEntry.classList.add("experience-entry");
         experienceEntry.innerHTML = `
-                <strong>${experience.companyName}</strong>
-                <div>Start Date: ${experience.startDate}</div>
-                <div>End Date: ${experience.endDate}</div>
-                <div>Description: ${experience.description}</div>
-                <button onclick="editExperience(${storedExperiences.indexOf(
-                  experience
-                )})">Edit</button>
-                <button onclick="deleteExperience(${storedExperiences.indexOf(
-                  experience
-                )})">Delete</button>
-            `;
-
+        <strong>${experience.companyName}</strong>
+        <div>Start Date: ${experience.startDate}</div>
+        <div>End Date: ${experience.endDate}</div>
+        <div>Description: ${experience.description}</div>
+        <button onclick="deleteExperience(${storedExperiences.indexOf(
+          experience
+        )})">Delete</button>
+      `;
         document
           .querySelector(".experiences-list")
           .appendChild(experienceEntry);
       }
 
+      // Function to delete an experience
       function deleteExperience(index) {
         storedExperiences.splice(index, 1);
         localStorage.setItem("experiences", JSON.stringify(storedExperiences));
         updateDisplay();
       }
 
+      // Function to update the display after deleting an experience
       function updateDisplay() {
         const experiencesList = document.querySelector(".experiences-list");
         experiencesList.innerHTML = "";
@@ -179,13 +171,13 @@
         }
       }
 
+      // Function to filter experiences
       function filterExperiences() {
         const filterValue = document
           .getElementById("filter")
           .value.toLowerCase();
-        const experiencesList = document.querySelector(".experiences-list");
         const experienceEntries =
-          experiencesList.querySelectorAll(".experience-entry");
+          document.querySelectorAll(".experience-entry");
 
         experienceEntries.forEach((entry) => {
           const companyName = entry
